@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Examen01.Interface
 {
-    interface IServiceable
+    public interface IServiceable
     {
         string Notify();
     }
