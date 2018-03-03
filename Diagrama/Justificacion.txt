@@ -1,0 +1,9 @@
+Mi idea era dejar la responsabilidad de tipos de bancos y 
+la forma de comunicarse, es decir cualquier tipo de comunicacion (JSON,FTP,HTTP ..etc) dejarla conectada con una interfaz
+de esta forma se puede reutilizar para cualquier banco el tipo de comunicaciom que quiera y no se deja solo especificamente para 1.
+
+Del otro lado deje la clase "SuperTrasactor" ya no supe como conectarla , pero mi idea era dejar a fuera el conocimiento de cada banco,
+ya que cada banco solo conoce una direccion con la que se puede conectar de banco a banco y el "supertransactor" se iba a encargar de eso.
+
+La clase Abstracta es para crear diferentes tipos de bancos, si se quiere dar de alta un banco nuevo , solo hay que llenar sus propiedades como "que datos necesita",
+"nombre" o algun dato exclusivo. Pero no hay que preocuparse por como se va a conectar ya que tenemos implementada esa parte con la interfaz de "serviceable".
