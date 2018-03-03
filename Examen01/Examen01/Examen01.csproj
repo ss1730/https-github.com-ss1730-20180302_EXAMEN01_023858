@@ -43,6 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\Bank.cs" />
+    <Compile Include="Abstract\SuperTransactor.cs" />
+    <Compile Include="ConcreteClasses\BankA.cs" />
+    <Compile Include="ConcreteClasses\BankB.cs" />
+    <Compile Include="ConcreteClasses\BankC.cs" />
+    <Compile Include="ConcreteDecorators\FTP.cs" />
+    <Compile Include="ConcreteDecorators\HTTP.cs" />
+    <Compile Include="ConcreteDecorators\JSON.cs" />
+    <Compile Include="Interface\Serviceable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -15,12 +15,12 @@ namespace Examen01.ConcreteClasses
         public IServiceable Serviceable;
         private string _transactionOrigin;
         private string _transactionDestiny;
-        private string _transactionAmount;
+        private double _transactionAmount;
 
-        public BankA(string name)
+        public BankA()
         {
             _name = "Banco Azteca";
-            Serviceable = new FTP();
+          
         }
 
         public override string AskData()
@@ -30,22 +30,27 @@ namespace Examen01.ConcreteClasses
             _transactionOrigin = Console.ReadLine();
             Console.WriteLine("Cuenta Destino: ");
             _transactionDestiny = Console.ReadLine();
-            Console.WriteLine("Cantidad a transferir: ");
-            _transactionAmount = Console.ReadLine();
+            Console.WriteLine("Cantidad a Transferir: ");
+            _transactionAmount = Double.Parse(Console.ReadLine());
 
             return "Origin: "+ _transactionOrigin + "Destiny: " + _transactionDestiny + "Amount: "+_transactionAmount;
         }
 
-        public override string SendData(SuperTransactor trasactor)
+        public override string SendData(SuperTransactor trasactor,Bank bank)
         {
-            return trasactor.SendingData(_transactionOrigin,_transactionDestiny,_transactionAmount,Serviceable);
+            return trasactor.SendingData(_transactionOrigin,_transactionDestiny,_transactionAmount,Serviceable,bank);
         }
 
-      
-
-        public override string ReciveTransaction()
+        public override string ReciveTransaction(string origin,double amount)
         {
-            throw new NotImplementedException();
+            _transactionOrigin = origin;
+            _transactionAmount = amount;
+            return "Trasaction From:" + _transactionOrigin + "The Amount Of : "+ amount;
+        }
+
+        public override string PrintTrnsaction()
+        {
+            return "Trasaction From:" + _transactionOrigin + "The Amount Of : " + _transactionAmount;
         }
     }
 }

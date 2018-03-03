@@ -7,10 +7,11 @@ using Examen01.Interface;
 
 namespace Examen01.Abstract
 {
-   abstract class Bank
+    public abstract class Bank
    {
        public abstract string AskData();
-       public abstract string SendData(SuperTransactor trasactor);
-       public abstract string ReciveTransaction();
+       public abstract string SendData(SuperTransactor trasactor,Bank bank);
+       public abstract string ReciveTransaction(string origin,double amount);
+       public abstract string PrintTrnsaction();
    }
 }
